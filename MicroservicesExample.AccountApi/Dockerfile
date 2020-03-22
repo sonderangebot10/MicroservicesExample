@@ -24,5 +24,5 @@ WORKDIR /app
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "MicroservicesExample.AccountApi.dll"]
 
-### TO BUILD MANUALLY: in root project folder 'docker build -f MicroservicesExample.AccountApi/Dockerfile .'
-### TO RUN: docker run -p 3000:80 ab20339c56b1, then test http://localhost:3000/api/getAccount
+### TO BUILD MANUALLY: in root project folder 'docker build -f MicroservicesExample.AccountApi/Dockerfile -t accountService.'
+### TO RUN: docker run -p 3000:80 accountService:latest, then test http://localhost:3000/api/getAccount
